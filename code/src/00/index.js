@@ -1,6 +1,7 @@
 console.log('Loaded 00.');
 
 // Demo using 2d context
+// Read: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 
 const speed = 0.1;
 let acc = 0.1;
@@ -8,7 +9,7 @@ let acc = 0.1;
 window.loop = (dt, canvas) => {
     acc += dt * speed;
 
-    // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+    // grab the context
     const ctx = canvas.getContext('2d');
 
     // draw squares

@@ -36,10 +36,10 @@ const attachScript = (lesson) => {
     const scriptTag = document.createElement('script');
     scriptTag.src = url;
     document.head.appendChild(scriptTag);
-
     document.title = `Lesson ${lesson}`;
 
     // start loop
+    // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
     window.requestAnimationFrame(loop);
 };
 
