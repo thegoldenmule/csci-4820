@@ -13,6 +13,8 @@ const attachScript = (lesson) => {
     const scriptTag = document.createElement('script');
     scriptTag.src = url;
     document.head.appendChild(scriptTag);
+
+    document.title = `Lesson ${lesson}`;
 };
 
 // Add a listener for the page load.
