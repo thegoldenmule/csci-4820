@@ -22,7 +22,7 @@ Choose one of the following (hint: use [paths](https://developer.mozilla.org/en-
 - pp. 31 - 48
 - pp. 63 - 65 "render modes"
 
-#### Additional (Non-Required) Resources
+#### Optional Resources
 
 - [Mozilla Developer Network Tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 - [Resizing a Canvas... in Production](https://webgl2fundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html)
