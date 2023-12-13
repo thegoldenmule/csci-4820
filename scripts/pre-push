@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd ./scripts && ./encrypt.sh
+
+if git st | grep -q solution-enc; then
+	echo "You have unencrypted files in your solution. Please encrypt them before pushing."
+	exit 1
+fi
