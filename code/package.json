@@ -7,6 +7,6 @@
     "dev": "./node_modules/.bin/live-server"
   },
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.1.0"
   }
 }

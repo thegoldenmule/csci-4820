@@ -1,4 +1,3 @@
-console.log('Loaded 00.');
 
 // Demo using 2d context
 // Read: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
@@ -21,15 +20,22 @@ window.loop = (dt, canvas) => {
         }
     }
 
-    // draw dashed lines
-    for (let x = 0, width = canvas.width; x < width; x += size) {
-        ctx.beginPath();
-        ctx.setLineDash([
-            Math.cos(acc / x) * canvas.height / 4,
-            Math.cos(acc / x) * canvas.height / 8,
-        ]);
-        ctx.moveTo(x + size / 2, 0);
-        ctx.lineTo(x + size / 2, canvas.height);
-        ctx.stroke();
-    }
+    // draw circle
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, Math.PI * 2);
+    ctx.fillStyle = '#ff0000';
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
+
+    // draw plus sign
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2 - 50, canvas.height / 2);
+    ctx.lineTo(canvas.width / 2 + 50, canvas.height / 2);
+    ctx.moveTo(canvas.width / 2, canvas.height / 2 - 50);
+    ctx.lineTo(canvas.width / 2, canvas.height / 2 + 50);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
 };
