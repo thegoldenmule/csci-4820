@@ -38,6 +38,10 @@ const attachScript = (type, index) => {
     document.head.appendChild(scriptTag);
     document.title = `${type}/${index}`;
 
+    if (window.init) {
+        window.init(_canvas);
+    }
+
     // start loop
     // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
     window.requestAnimationFrame(loop);

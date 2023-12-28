@@ -1,6 +1,6 @@
 
-const speed = 0.1;
-let acc = 0.1;
+let speed = 0.5;
+let acc = 0.0;
 
 window.loop = (dt, canvas) => {
     acc += dt * speed;
@@ -19,5 +19,4 @@ window.loop = (dt, canvas) => {
     if (acc > canvas.height - 100 || acc < 0) {
         speed *= -1;
     }
-
 };
