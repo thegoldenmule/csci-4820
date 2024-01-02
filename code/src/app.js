@@ -1,81 +1,95 @@
 let _canvas;
 let _lastFrameTime;
+let _hasInited = false;
 
 const loop = (time) => {
-    if (!_lastFrameTime) {
-        _lastFrameTime = time;
-    }
-
-    const dt = time - _lastFrameTime;
+  if (!_lastFrameTime) {
     _lastFrameTime = time;
+  }
 
-    if (_canvas) {
-        _canvas.width = _canvas.clientWidth
-        _canvas.height = _canvas.clientHeight;
+  const dt = time - _lastFrameTime;
+  _lastFrameTime = time;
+
+  if (_canvas) {
+    _canvas.width = _canvas.clientWidth
+    _canvas.height = _canvas.clientHeight;
+  }
+
+  if (!_hasInited) {
+    if (window.init) {
+      _hasInited = true;
+      
+      window.init(_canvas);
     }
+  }
 
-    if (window.loop) {
-        window.loop(dt, _canvas);
-    }
+  if (window.loop) {
+    window.loop(dt, _canvas);
+  }
 
-    window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(loop);
 };
 
 const getParameter = (name) => {
-    // pull off query parameter
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
+  // pull off query parameter
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
 };
 
 const attachScript = (type, index) => {
-    // try to attach the script
-    const url = `./src/${type}/${index}/index.js`;
+  window.loadShaders = async () => {
+    const shaders = await Promise.all([
+      fetch(`./src/example/${index}/vertex.glsl`).then(r => r.text()),
+      fetch(`./src/example/${index}/fragment.glsl`).then(r => r.text()),
+    ]);
+  
+    return shaders;
+  };
 
-    console.log(`Attaching '${url}'.`);
+  // try to attach the script
+  const url = `./src/${type}/${index}/index.js`;
 
-    const scriptTag = document.createElement('script');
-    scriptTag.src = url;
-    document.head.appendChild(scriptTag);
-    document.title = `${type}/${index}`;
+  console.log(`Attaching '${url}'.`);
 
-    if (window.init) {
-        window.init(_canvas);
-    }
+  const scriptTag = document.createElement('script');
+  scriptTag.src = url;
+  document.head.appendChild(scriptTag);
+  document.title = `${type}/${index}`;
 
-    // start loop
-    // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
-    window.requestAnimationFrame(loop);
+  // start loop
+  // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+  window.requestAnimationFrame(loop);
 };
 
 const createLink = (type, index) => {
-    const container = document.getElementById('container');
-    const link = document.createElement('a');
-    link.href = `?${type}=${index}`;
-    link.innerText = `${type}/${index}`;
+  const container = document.getElementById('container');
+  const link = document.createElement('a');
+  link.href = `?${type}=${index}`;
+  link.innerText = `${type}/${index}`;
 
-    container.prepend(link);
-    container.prepend(document.createElement('br'));
+  container.prepend(link);
+  container.prepend(document.createElement('br'));
 };
 
 // Add a listener for the page load.
 // See: https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
 window.onload = () => {
-    _canvas = document.getElementById('canvas');
+  _canvas = document.getElementById('canvas');
 
-    // example?
-    const example = getParameter("example");
-    const homework = getParameter("homework");
-    const solution = getParameter("solution");
-    const solutionTarget = getParameter("solution-target");
-    if (example) {
-        attachScript("example", example);
-    } else if (homework) {
-        attachScript("homework", homework);
-    } else if (solution) {
-        attachScript("solution", solution);
-    } else if (solution) {
-        attachScript("solution-target", solutionTarget);
-    } else {
-        ["01", "00"].map(i => createLink("example", i));
-    }
+  // example?
+  const example = getParameter("example");
+  const homework = getParameter("homework");
+  const solution = getParameter("solution");
+  const solutionTarget = getParameter("solution-target");
+  if (example) {
+    attachScript("example", example);
+  } else if (homework) {
+    attachScript("homework", homework);
+  } else if (solution) {
+    attachScript("solution", solution);
+  } else if (solution) {
+    attachScript("solution-target", solutionTarget);
+  } else {
+    ["02", "01", "00"].map(i => createLink("example", i));
+  }
 };
