@@ -5,9 +5,9 @@
 
 **Contact** benjamin.jordan@slu.edu
 
-Please email any time with questions! I will typically respond within a few hours.
+Please email any time with questions! I will typically respond within a day.
 
-Also-- [Join the Discord](#)!
+Also-- [Join the Discord](https://discord.gg/xQbbrjz6rG)!
 
 ### Course Requirements
 
@@ -22,13 +22,11 @@ Any resource may be used to complete assignments. Google things. Talk to other p
 
 #### Assignments
 
-The largest component of this course will be the programming assigments. These will generally be due one week from their assignment, at the start of class. Late assignments lose 10% after the first week and 10% every week thereafter.
-
-Incomplete assignments will lose 10%, but may be resubmitted as many times as it takes.
+The largest component of this course will be the programming assigments. These will generally be due one week from their assignment, at the start of class. Late assignments will be docked by 50%, regardless of lateness.
 
 ##### Exams
 
-There will be two "exams": a midterm and a final. Both exams are open book, "open-Google", and takehome.
+There will be two "exams": a midterm and a final. Both exams are written and in class.
 
 ##### Weighting
 
@@ -43,7 +41,7 @@ Grading will be on an uncurved scale of 90% (A), 80% (B), 70% (C), 60% (D), weig
 ### Topics
 
 - Development Setup and Best Practices
-- 3D Graphics Pipeline
+- 2D and 3D Graphics Pipelines
 - Vectors, Matrices, and Quaternions
 - Building Geometry
 - UVs, Colors, Normals, and Materials
