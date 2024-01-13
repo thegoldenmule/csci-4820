@@ -5,6 +5,8 @@
 
 **Instructor** Benjamin Jordan
 
+**Website** [On GitHub](https://github.com/thegoldenmule/csci-4820)
+
 **Email** [benjamin.jordan@slu.edu](mailto:benjamin.jordan@slu.edu)
 
 **Discord** [Join the Discord](https://discord.gg/xQbbrjz6rG)!
