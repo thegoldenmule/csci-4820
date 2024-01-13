@@ -22,11 +22,11 @@ Any resource may be used to complete assignments. Google things. Talk to other p
 
 #### Assignments
 
-The largest component of this course will be the programming assigments. These will generally be due one week from their assignment, at the start of class. Late assignments will be docked by 50%, regardless of lateness.
+The largest component of this course will be the programming assigments. These will generally be due the next class period, at the start of class. Late assignments will be docked an automatic 50% but can still be turned in.
 
 ##### Exams
 
-There will be two "exams": a midterm and a final. Both exams are written and in class.
+There will be two exams: a midterm and a final. Both exams are written and in class.
 
 ##### Weighting
 
@@ -48,8 +48,7 @@ Grading will be on an uncurved scale of 90% (A), 80% (B), 70% (C), 60% (D), weig
 - Shaders
 - Lighting and Shading
 - Render Queues, Culling, Sorting
-- Shadows
-- Post Processing
+- Advanced topics: shadows, post processing, render to texture, etc.
 
 ### Honesty
 
