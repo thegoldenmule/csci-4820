@@ -47,11 +47,11 @@ The largest component of this course will be the programming assigments. These w
 
 **Late assignments will be docked an automatic 50% but can still be turned in.**
 
-##### Exams
+#### Exams
 
 There will be two exams: a midterm and a final. Both exams are written, in-class, and closed book.
 
-##### Weighting
+#### Weighting
 
 Grading will be on a scale of 90% (A), 80% (B), 70% (C), 60% (D), weighted as follows:
 
