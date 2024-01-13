@@ -31,25 +31,29 @@ Students are expected to attend all class meetings. In case of illness or other 
 
 ### Grading
 
-All grading will be done on _committed work only_. This includes code, commit messages, code comments, and documentation.  If it is not committed, it is incomplete. If it does not provide sufficient comments or documentation, it is incomplete. If code does not run, it is incomplete.
+Grading will be done on screenshots, code, documentation, and paper.
 
-Any resource may be used to complete assignments. Google things. Talk to other people. Discuss approaches in the Discord. Use open source code. However, all work must be property attributed (see **Honesty** section).
+Any resource may be used to complete assignments. Google things. Talk to other people. Discuss approaches in the Discord. Use open source code. Ask ChatGPT. However, all work must be property attributed (see **Academic Integrity** section).
 
-#### Assigned Readings
+#### Readings
 
 When readings are assigned, they should be completed by the next class as they will give structure to lectures and in-class workshops.
 
-#### Programming Assignments
+#### Coding
 
-The largest component of this course will be the programming assigments. These will generally be due the next class period, at the start of class. Late assignments will be docked an automatic 50% but can still be turned in.
+The largest component of this course will be the programming assigments. These will generally be due the next class period, at the start of class.
+
+**Code that does not run will not be evaluated.** Make sure your code runs.
+
+**Late assignments will be docked an automatic 50% but can still be turned in.**
 
 ##### Exams
 
-There will be two exams: a midterm and a final. Both exams are written and in class.
+There will be two exams: a midterm and a final. Both exams are written, in-class, and closed book.
 
 ##### Weighting
 
-Grading will be on an uncurved scale of 90% (A), 80% (B), 70% (C), 60% (D), weighted as follows:
+Grading will be on a scale of 90% (A), 80% (B), 70% (C), 60% (D), weighted as follows:
 
 |||
 |-|-|
@@ -57,12 +61,16 @@ Grading will be on an uncurved scale of 90% (A), 80% (B), 70% (C), 60% (D), weig
 |Midterm|20%|
 |Final|20%|
 
+A curve may be applied depending on how the class proceeds.
+
 ### Topics
+
+We will cover the following topics, with the goal of building a basic 3D graphics engine:
 
 - Development Setup and Best Practices
 - 2D and 3D Graphics Pipelines
 - Vectors, Matrices, and Quaternions
-- Building Geometry
+- Geometry
 - UVs, Colors, Normals, and Materials
 - Shaders
 - Lighting and Shading
