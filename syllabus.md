@@ -5,8 +5,6 @@
 
 **Instructor** Benjamin Jordan
 
-**Website** [On GitHub](https://github.com/thegoldenmule/csci-4820)
-
 **Email** [benjamin.jordan@slu.edu](mailto:benjamin.jordan@slu.edu)
 
 **Discord** [Join the Discord](https://discord.gg/xQbbrjz6rG)!
@@ -29,13 +27,19 @@ This class will be a combination of lectures, class discussions, and workshops. 
 
 ### Attendence
 
-Students are expected to attend all class meetings. In case of illness or other serious situations, students should contact the instructor to explain the reason for their absence.
+While I do not take attendance, students are expected to attend all class meetings. Material covered in class will not be re-covered over email or other "office hours". In case of illness or other serious situations, students should do their best to contact me ahead of time.
 
 ### Grading
 
 Grading will be done on screenshots, code, documentation, and paper.
 
-Any resource may be used to complete assignments. Google things. Talk to other people. Discuss approaches in the Discord. Use open source code. Ask ChatGPT. However, all work must be property attributed (see **Academic Integrity** section).
+#### Resource, AI, and Copied Code
+
+Any resource may be used to complete assignments. Google things. Talk to other people. Discuss approaches in the Discord. Use open source code or Stack Overflow answers to _help you out_. However, you may not copy code from each other and **all work copied from third parties must be property attributed**.
+
+ChatGPT, GitHub Copilot, and other AI models are valuable tools for programmers that you must learn to use properly. They may be used on _any_ assignment, **as long as their work is cited**. This simply means that you need to document code that AI generated for you. Be advised: the midterm, final, and quizzes will be on paper, and in class. Do not let your use of AI rob you of understanding the material.
+
+In addition, I will be using [MOSS](https://theory.stanford.edu/~aiken/moss/) to scan all assignments for copied code. **Any non-attributed code that shows up will be considered cheating**. On the first offense of cheating, you will receive a 0 on the assignment. On the second offense, you will receive a 0 in the course and reported to the department and deans office.
 
 #### Readings
 
@@ -59,7 +63,8 @@ Grading will be on a scale of 90% (A), 80% (B), 70% (C), 60% (D), weighted as fo
 
 |||
 |-|-|
-|Assignments|60%|
+|Assignments|50%|
+|Quizzes|10%|
 |Midterm|20%|
 |Final|20%|
 
@@ -92,7 +97,6 @@ Committed code must follow industry-standard licensing:
 - If you are using open-source code, check the [license](https://tldrlegal.com/) associated with it. Generally, attribution and a copy of the license must be included with the code. Some licenses are more restrictive and may not allow you to use it at all.
 
 - For short bits copy/pasted from knowledge bases (like StackOverflow) or blogs, include a link to the resource.
-
 
 ### Disability Accommodations
 
