@@ -2,7 +2,7 @@ let _canvas;
 let _lastFrameTime;
 let _hasInited = false;
 
-const loop = (time) => {
+const loop = async (time) => {
   if (!_lastFrameTime) {
     _lastFrameTime = time;
   }
@@ -19,7 +19,10 @@ const loop = (time) => {
     if (window.init) {
       _hasInited = true;
       
-      window.init(_canvas);
+      const v = window.init(_canvas);
+      if (v instanceof Promise) {
+        await v;
+      }
     }
   }
 
@@ -37,13 +40,42 @@ const getParameter = (name) => {
 };
 
 const attachScript = (type, index) => {
-  window.loadShaders = async () => {
+
+  window.loadShaders = async (gl) => {
     const shaders = await Promise.all([
-      fetch(`./src/example/${index}/vertex.glsl`).then(r => r.text()),
-      fetch(`./src/example/${index}/fragment.glsl`).then(r => r.text()),
+      fetch(`./src/example/${index}/vertex.glsl`)
+        .then(r => r.text())
+        .then(source => {
+          const shader = gl.createShader(gl.VERTEX_SHADER);
+          gl.shaderSource(shader, source);
+          gl.compileShader(shader);
+
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            console.error(gl.getShaderInfoLog(shader));
+            return null;
+          }
+
+          return shader;
+        }),
+      fetch(`./src/example/${index}/fragment.glsl`)
+        .then(r => r.text())
+        .then(source => {
+          const shader = gl.createShader(gl.FRAGMENT_SHADER);
+          gl.shaderSource(shader, source);
+          gl.compileShader(shader);
+
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            console.error(gl.getShaderInfoLog(shader));
+            return null;
+          }
+
+          return shader;
+        }),
     ]);
+
+    console.log('Shaders loaded.');
   
-    return shaders;
+    return { vertex: shaders[0], fragment: shaders[1], };
   };
 
   // try to attach the script
