@@ -10,7 +10,8 @@ window.init = async (canvas) => {
   gl.clearColor(clearColor.r, clearColor.g, clearColor.b, 1.0);
 
   // load vertex and fragment shaders + create program
-  const { vertex, fragment } = await window.loadShaders(gl);
+  const vertex = await window.loadShader({ gl, name: 'vertex', type: gl.VERTEX_SHADER });
+  const fragment = await window.loadShader({ gl, name: 'fragment', type: gl.FRAGMENT_SHADER });
   program = gl.createProgram();
   program.attributes = {};
 

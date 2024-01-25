@@ -41,41 +41,20 @@ const getParameter = (name) => {
 
 const attachScript = (type, index) => {
 
-  window.loadShaders = async (gl) => {
-    const shaders = await Promise.all([
-      fetch(`./src/example/${index}/vertex.glsl`)
-        .then(r => r.text())
-        .then(source => {
-          const shader = gl.createShader(gl.VERTEX_SHADER);
-          gl.shaderSource(shader, source);
-          gl.compileShader(shader);
+  window.loadShader = async ({ gl, name, type }) => {
+    const res = await fetch(`./src/example/${index}/${name}.glsl`);
+    const source = await res.text();
+    const shader = gl.createShader(type);
 
-          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-            console.error(gl.getShaderInfoLog(shader));
-            return null;
-          }
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
 
-          return shader;
-        }),
-      fetch(`./src/example/${index}/fragment.glsl`)
-        .then(r => r.text())
-        .then(source => {
-          const shader = gl.createShader(gl.FRAGMENT_SHADER);
-          gl.shaderSource(shader, source);
-          gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(shader));
+      return null;
+    }
 
-          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-            console.error(gl.getShaderInfoLog(shader));
-            return null;
-          }
-
-          return shader;
-        }),
-    ]);
-
-    console.log('Shaders loaded.');
-  
-    return { vertex: shaders[0], fragment: shaders[1], };
+    return shader;
   };
 
   // try to attach the script
