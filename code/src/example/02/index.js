@@ -1,3 +1,4 @@
+/** @type {WebGLRenderingContext} */
 let gl;
 
 let program;
@@ -71,6 +72,8 @@ const createQuad = () => {
 window.loop = (dt, canvas) => {
   // clear
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+  // NDC -> Viewport
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
   for (const shape of shapes) {
