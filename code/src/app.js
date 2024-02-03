@@ -41,10 +41,10 @@ const getParameter = (name) => {
 
 const attachScript = (type, index) => {
 
-  window.loadShader = async ({ gl, name, type }) => {
-    const res = await fetch(`./src/example/${index}/${name}.glsl`);
+  window.loadShader = async ({ gl, name, type: shaderType }) => {
+    const res = await fetch(`./src/${type}/${index}/${name}.glsl`);
     const source = await res.text();
-    const shader = gl.createShader(type);
+    const shader = gl.createShader(shaderType);
 
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
