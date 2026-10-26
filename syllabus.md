@@ -7,8 +7,6 @@
 
 **Email** [benjamin.jordan@slu.edu](mailto:benjamin.jordan@slu.edu)
 
-**Discord** [Join the Discord](https://discord.gg/xQbbrjz6rG)!
-
 **Office Hours** I do not hold regular office hours but will respond in a timely manner over Discord or email during weekdays. Nights and weekends my reponse time will vary but I will try my best to respond quickly.
 
 ### Course Description
