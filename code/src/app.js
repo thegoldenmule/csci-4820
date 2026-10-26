@@ -91,15 +91,12 @@ window.onload = () => {
   const example = getParameter("example");
   const homework = getParameter("homework");
   const solution = getParameter("solution");
-  const solutionTarget = getParameter("solution-target");
   if (example) {
     attachScript("example", example);
   } else if (homework) {
     attachScript("homework", homework);
   } else if (solution) {
     attachScript("solution", solution);
-  } else if (solution) {
-    attachScript("solution-target", solutionTarget);
   } else {
     ["02", "01", "00"].map(i => createLink("example", i));
   }

@@ -1,8 +1,6 @@
 node_modules
 *.swp
 .DS_Store
-code/src/solution
-code/src/solution-target
 *.aux
 *.log
 *.gz
